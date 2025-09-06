@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art Quote Calendar</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+
+<header class="topbar">
+<div class="titles">
+<div class="title-badge">
+<span class="app-title">Artystyczne motywacje</span>
+</div>
+<div id="dateLabel"></div>
+</div>
+
+<nav class="quick-nav">
+<button id="prevBtn" aria-label="Wczoraj" title="Wczoraj">←</button>
+<button id="todayBtn" title="Dziś">Dziś</button>
+<button id="nextBtn" aria-label="Jutro" title="Jutro">→</button>
+</nav>
+</header>
+
+<article id="card" aria-live="polite">
+<p id="quoteTxt" class="quote"></p>
+<p id="authorTxt" class="author"></p>
+<p id="contextTxt" class="context"></p>
+<div id="tags" class="tags"></div>
+</article>
+
+<footer class="actions">
+<button id="favBtn" title="Ulubione">♥</button>
+<button id="randomBtn" title="Losuj">⟳</button>
+<button id="noteBtn" title="Notatka">＋</button>
+</footer>
+
+</main>
+
+<dialog id="noteDlg">
+<form method="dialog">
+<h3>Notatka dnia</h3>
+<textarea id="noteArea" rows="6" placeholder="Twoja myśl..."></textarea>
+<menu>
+<button value="cancel">Anuluj</button>
+<button id="saveNoteBtn" value="default">Zapisz</button>
+</menu>
+</form>
+</dialog>
+
+<script src="quotes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
