@@ -1,94 +1,96 @@
 :root{
-    /* ——— zielony motyw: Nyanza / Reseda ——— */
-    --bg:#D9E6CA; /* tło strony */
-    --ink:#4F6357; /* główny tekst (ciemny zielony) */
-    --ink-weak:#4F6357CC; /* delikatniejszy tekst */
-    --card:#F1F6EC; /* tło karty z cytatem */
-    --border:#4F635744; /* cienka obwódka */
-    
-    /* przyciski i tagi */
-    --chip-bg:#778667; /* tło przycisków */
-    --chip-fg:#EAF3E4; /* kolor tekstu na przyciskach */
-    --chip-hover:#8E9D92; /* hover */
-    
-    --title-bg:#4F6357; /* ciemna zieleń dla tła */
-    --title-fg:#D9E6CA; /* jasna zieleń dla napisu */
-    --title-border:#00000014;
-    --title-shadow:none; /* czysto, bez cienia */
-    }
-    
-    *{ box-sizing:border-box; }
-    
-    body{
-    margin:0;
-    font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    }
-    
-    .wrap{ max-width:800px; margin:0 auto; padding:24px; }
-    
-    /* top bar */
-    .topbar{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    gap:12px; margin-bottom:16px;
-    }
-    .titles{ display:flex; flex-direction:column; gap:8px; }
-    
-    .title-badge{
-        display:inline-flex; align-items:center;
-        background:var(--title-bg);
-        color:var(--title-fg);
-        padding:10px 14px;
-        border:1px solid var(--title-border);
-        border-radius:0;
-        box-shadow:none;
-        } 
-    
+/* ——— paleta: Myrtle Green & Pearl (ciemne tło, jasne karty) ——— */
+--bg:#317873; /* tło strony – Myrtle */
+--ink:#317873; /* główny tekst – Myrtle (ciemny na jasnych kartach) */
+--ink-weak:#317873CC; /* delikatniejszy tekst */
 
-    .app-title{
-    margin:0;
-    font-family:"Poppins", system-ui, -apple-system, Arial, sans-serif;
-    font-weight:800; letter-spacing:1px;
-    font-size:clamp(18px, 2.2vw, 22px);
-    text-transform:uppercase;
-    }
-    
-    /* data pod tytułem */
-    #dateLabel{
-    font-family:"Playfair Display", serif;
-    letter-spacing:.5px;
-    color:var(--ink-weak);
-    }
-    
-    /* karta cytatu */
-    #card{
-        background:var(--card);
-        border:1px solid var(--border);
-        padding:28px;
-        border-radius:0; /* ← było 12px */
-        box-shadow:none;
-        }-shadow:0 8px 24px rgba(0,0,0,0);
-    
-    /* treść karty */
-    .quote{
-    font-size:1.8rem; line-height:1.5;
-    margin:0 0 12px; color:var(--ink);
-    }
-    .author{
-    color:var(--ink); margin:.5rem 0; font-weight:700;
-    }
-    .context{
-    color:var(--ink-weak); margin:.25rem 0 1rem;
-    }
-    
-    /* tagi */
-    .tags{ display:flex; flex-wrap:wrap; gap:8px; }
-    .tags .tag{
-    background:var(--chip-bg); color:var(--chip-fg);
-    padding:4px 10px; border-radius:999px; font-size:.85rem;
-    }
-    
+--card:#DFD7B7; /* tło karty – Pearl */
+--border:#31787344; /* cienka obwódka – Myrtle */
+
+/* przyciski i tagi */
+--chip-bg:#DFD7B7; /* lekko rozjaśnione przyciski – Pearl */
+--chip-fg:#317873; /* tekst na przyciskach – Myrtle */
+--chip-hover:#E8DEC7; /* hover – Pearl ciemniejszy */
+
+/* tytuł/odznaka */
+--title-bg:transparent;
+--title-fg:#DFD7B7;
+--title-border:transparent;
+--title-shadow:none;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+margin:0;
+font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+background:var(--bg);
+color:var(--ink);
+}
+
+.wrap{ max-width:800px; margin:0 auto; padding:24px; }
+
+/* top bar */
+.topbar{
+display:flex; justify-content:space-between; align-items:flex-start;
+gap:12px; margin-bottom:16px;
+}
+.titles{ display:flex; flex-direction:column; gap:8px; }
+
+/* NAGŁÓWEK — bez tła, jasny tekst */
+.title-badge{
+background:transparent;
+border:0;
+padding:0;
+box-shadow:none;
+}
+
+.app-title{
+margin:0;
+font-family:"Playfair Display", serif; /* jak data */
+font-weight:700;
+letter-spacing:.5px;
+text-transform:none; /* bez uppercase */
+color:#DFD7B7;
+font-size:clamp(20px, 2.4vw, 26px);
+}
+
+/* Data pod tytułem – jasna */
+#dateLabel{
+font-family:"Playfair Display", serif;
+letter-spacing:.5px;
+color:#DFD7B7;
+opacity:.95;
+}
+
+/* karta cytatu */
+#card{
+background:var(--card);
+border:1px solid var(--border);
+padding:28px;
+border-radius:0;
+box-shadow:none;
+}
+
+/* treść karty */
+.quote{
+font-size:1.8rem; line-height:1.5;
+margin:0 0 12px; color:var(--ink);
+}
+.author{
+color:var(--ink); margin:.5rem 0; font-weight:700;
+}
+.context{
+color:var(--ink-weak); margin:.25rem 0 1rem;
+}
+
+/* tagi */
+.tags{ display:flex; flex-wrap:wrap; gap:8px; }
+.tags .tag{
+background:var(--chip-bg); color:var(--chip-fg);
+padding:4px 10px; border-radius:999px; font-size:.85rem;
+}
+
 /* przyciski (nawigacja i akcje) */
 .quick-nav button,
 .actions button{
@@ -104,31 +106,33 @@ justify-content: center;
 font-size: 16px;
 font-weight: 700;
 line-height: 1;
-transition: none; /* bez box-shadow */
+transition: background .2s;
 }
-    
-    .actions{
-    display:flex; gap:10px; justify-content:flex-end; margin-top:16px;
-    }
-    
-    /* favorit active look */
-    #favBtn.active{
-    background:var(--card);
-    color:#E53935; /* czerwone serduszko */
-    border-color:var(--border);
-    }
-    
-    /* dialog */
-    dialog{ border:none; border-radius:12px; padding:0; }
-    dialog form{ padding:20px; min-width:320px; background:var(--card); color:var(--ink); }
-    dialog textarea{
-    width:100%; font-family:inherit; color:var(--ink);
-    border:1px solid var(--border); border-radius:8px; padding:10px; background:#fff;
-    }
-    dialog menu{ display:flex; gap:10px; justify-content:flex-end; margin-top:12px; }
-    dialog button{ background:var(--chip-bg); color:var(--chip-fg); border-color:var(--chip-bg); }
-    
-    /* mobile */
-    @media (max-width:560px){
-    .quote{ font-size:1.5rem; }
-    }     
+.quick-nav button:hover,
+.actions button:hover{ background: var(--chip-hover); }
+
+.actions{
+display:flex; gap:10px; justify-content:flex-end; margin-top:16px;
+}
+
+/* favorit active look */
+#favBtn.active{
+background:var(--card);
+color:#E53935;
+border-color:var(--border);
+}
+
+/* dialog */
+dialog{ border:none; border-radius:12px; padding:0; }
+dialog form{ padding:20px; min-width:320px; background:var(--card); color:var(--ink); }
+dialog textarea{
+width:100%; font-family:inherit; color:var(--ink);
+border:1px solid var(--border); border-radius:8px; padding:10px; background:#fff;
+}
+dialog menu{ display:flex; gap:10px; justify-content:flex-end; margin-top:12px; }
+dialog button{ background:var(--chip-bg); color:var(--chip-fg); border-color:var(--chip-bg); }
+
+/* mobile */
+@media (max-width:560px){
+.quote{ font-size:1.5rem; }
+}
